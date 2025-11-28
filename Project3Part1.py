@@ -9,7 +9,7 @@ greyImg = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 blur = cv.GaussianBlur(greyImg, (5,5), 0)
 
-#Adaptive Gaussian
+# #Adaptive Gaussian
 # thresh = cv.adaptiveThreshold(
 #     blur, 
 #     255, 
@@ -44,5 +44,6 @@ final = cv.bitwise_and(img, img, mask = mask)
 
 # cv.namedWindow("Final", cv.WINDOW_NORMAL)
 # cv.imshow("Final", final)
-
+cv.imwrite("Threshold.JPEG", thresh)
+cv.imwrite("Mask.JPEG", mask)
 cv.imwrite("Final.JPEG", final)
